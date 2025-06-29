@@ -1,0 +1,30 @@
+<!-- src/main/resources/templates/main.mustache -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>메인</title>
+</head>
+<body>
+<h1>환영합니다, {{username}}님!</h1>
+
+<!-- 기존 버튼들 -->
+<button onclick="location.href='/user/update/{{username}}'">
+    ⚙️ 회원정보 수정
+</button>
+<button onclick="location.href='/logout'">
+    🔒 로그아웃
+</button>
+<button onclick="location.href='/place'">
+    📍 장소 등록
+</button>
+
+
+<hr/>
+
+
+<div>
+
+</div>
+</body>
+</html>

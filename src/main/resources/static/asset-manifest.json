@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.3a13f724.css",
+    "main.js": "/static/js/main.2e21fd56.js",
+    "static/js/453.e4d6e87e.chunk.js": "/static/js/453.e4d6e87e.chunk.js",
+    "static/media/weather_logo-remove.png": "/static/media/weather_logo-remove.e3f1bf47e7188ecec1dd.png",
+    "index.html": "/index.html",
+    "main.3a13f724.css.map": "/static/css/main.3a13f724.css.map",
+    "main.2e21fd56.js.map": "/static/js/main.2e21fd56.js.map",
+    "453.e4d6e87e.chunk.js.map": "/static/js/453.e4d6e87e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3a13f724.css",
+    "static/js/main.2e21fd56.js"
+  ]
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>장소 등록</title>
+</head>
+<body>
+<h2>장소 등록</h2>
+<form id="placeForm">
+    <input type="text" id="name" placeholder="장소 이름" required><br>
+    <input type="text" id="latitude" placeholder="위도" required><br>
+    <input type="text" id="longitude" placeholder="경도" required><br>
+    <input type="text" id="category" placeholder="카테고리" required><br>
+    <button type="submit">등록</button>
+</form>
+
+<script>
+    document.getElementById('placeForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const data = {
+            name: document.getElementById('name').value,
+            latitude: parseFloat(document.getElementById('latitude').value),
+            longitude: parseFloat(document.getElementById('longitude').value),
+            category: document.getElementById('category').value
+        };
+
+        const token = localStorage.getItem('jwtToken');
+        if (!token) {
+            alert("로그인이 필요합니다");
+            return;
+        }
+
+        fetch('/api/places', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + token
+            },
+            body: JSON.stringify(data)
+        })
+                .then(res => res.text())
+                .then(alert)
+                .catch(console.error);
+    });
+</script>
+</body>
+</html>

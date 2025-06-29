@@ -1,0 +1,39 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>회원정보수정</title>
+</head>
+<body>
+<h1>회원정보수정</h1>
+<hr>
+<form id="updateForm" action="/user/update/{{USER.username}}" method="post" name="updateForm">
+    <input type="password" name="password" id="password" required placeholder="password"/>
+    <input type="password" name="confirm-password" id="confirm-password" required placeholder="confirm-password"/>
+    <input type="text" name="nickname" id="nickname"required placeholder="nickname" value="{{USER.nickname}}"/>
+    <input type="submit" value="Update"/>
+    <p id="error-message" style="color: red;"></p>
+</form>
+<form action="/user/delete/{{USER.username}}" method="post" onsubmit="return confirm('정말로 삭제하시겠습니까?');">
+  <button type="submit">회원 삭제</button>
+</form>
+<a href="/main">
+    <button type="button">메인으로</button>
+</a>
+<script>
+    document.getElementById('updateForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirm-password').value;
+      const errorMessage = document.getElementById('error-message');
+
+      if (password !== confirmPassword) {
+        errorMessage.textContent = '비밀번호가 일치하지 않습니다.';
+      } else {
+        errorMessage.textContent = '';
+        alert('변경이 완료되었습니다!');
+        document.getElementById('updateForm').submit();
+      }
+    });
+</script>
+</body>
+</html>
